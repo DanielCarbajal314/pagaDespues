@@ -11,6 +11,7 @@ service: paga-despues
 provider:
   name: aws
   runtime: nodejs10.x
+  region: us-east-2
 
 # The `functions` block defines what code to deploy
 functions:
@@ -21,6 +22,7 @@ functions:
           path: listUsers
           method: get
           cors: true
+          integration: LAMBDA 
   createUser:
     handler: handler.createUser
     events:
@@ -28,6 +30,7 @@ functions:
           path: createUser
           method: post
           cors: true        
+          integration: LAMBDA 
   listPaymentMethods:
     handler: handler.listPaymentMethods
     events:
@@ -35,6 +38,7 @@ functions:
           path: listPaymentMethods
           method: get
           cors: true 
+          integration: LAMBDA 
   createPayment:
     handler: handler.createPayment
     events:
@@ -42,6 +46,7 @@ functions:
           path: createPayment
           method: post
           cors: true         
+          integration: LAMBDA 
   createPaymentMethod:
     handler: handler.createPaymentMethod
     events:
@@ -49,3 +54,4 @@ functions:
           path: createPaymentMethod
           method: post
           cors: true
+          integration: LAMBDA 
