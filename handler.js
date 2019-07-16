@@ -25,7 +25,7 @@ module.exports.createPaymentMethod = (event, context, callback) => {
 
 
 module.exports.listPaymentMethods = (event, context, callback) => {
-  listPaymentMethodsHandler(event.pathParameters.userToken, userPaymentMethodList=>{
+  listPaymentMethodsHandler(event.query.userToken, userPaymentMethodList=>{
     callback(null, userPaymentMethodList);
   });
 };

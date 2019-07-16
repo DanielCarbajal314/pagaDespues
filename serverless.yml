@@ -37,6 +37,10 @@ functions:
       - http:
           path: listPaymentMethods
           method: get
+          request:
+            parameters:
+              querystrings:
+                url: true
           cors: true 
           integration: LAMBDA 
   createPayment:

@@ -1,0 +1,134 @@
+{
+	"variables": [],
+	"info": {
+		"name": "PagaDespuesTest",
+		"_postman_id": "45f43b9b-84cd-22b9-5ccd-8fabadc509d4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "listUsers",
+					"request": {
+						"url": "https://1xl2yvgmgi.execute-api.us-east-2.amazonaws.com/dev/listUsers",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterNewUser",
+					"request": {
+						"url": "https://1xl2yvgmgi.execute-api.us-east-2.amazonaws.com/dev/createUser",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Daniel\",\r\n    \"lastName\": \"Carbajal\",\r\n    \"email\": \"daniel.carb23@pucp.edu.pe\",\r\n    \"dateOfBirth\": \"1989-08-08\",\r\n    \"addressLine1\": \"Av La Marina\",\r\n    \"city\": \"San Francisco\",\r\n    \"country\": \"US\",\r\n    \"stateProvince\": \"CA\",\r\n    \"postalCode\": \"94105\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PaymentMethods",
+			"description": "",
+			"item": [
+				{
+					"name": "ListUserPaymentMethods",
+					"request": {
+						"url": {
+							"raw": "https://1xl2yvgmgi.execute-api.us-east-2.amazonaws.com/dev/listPaymentMethods?userToken=usr-aea7b129-740d-435f-a6ff-1a3412ca0985",
+							"protocol": "https",
+							"host": [
+								"1xl2yvgmgi",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"listPaymentMethods"
+							],
+							"query": [
+								{
+									"key": "userToken",
+									"value": "usr-aea7b129-740d-435f-a6ff-1a3412ca0985",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Register User's Payment Method",
+					"request": {
+						"url": "https://1xl2yvgmgi.execute-api.us-east-2.amazonaws.com/dev/createPaymentMethod",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userToken\" : \"usr-aea7b129-740d-435f-a6ff-1a3412ca0985\",\n\t\"bankAccountId\" : \"12312312337766681\",\n\t\"branchId\" : \"122105155\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"description": "",
+			"item": [
+				{
+					"name": "Register Payment",
+					"request": {
+						"url": "https://1xl2yvgmgi.execute-api.us-east-2.amazonaws.com/dev/createPayment",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"destinationToken\":\"usr-aea7b129-740d-435f-a6ff-1a3412ca0985\",\n\t\"amount\":\"70\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

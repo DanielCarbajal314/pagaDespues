@@ -4,6 +4,7 @@ const PaymentMethod = require('../models/payment-method').PaymentMethod;
 
 
 module.exports.listPaymentMethodsHandler = (userToken,callback) => {
+    console.log(userToken);
     BaseHttp.get(aplicationSettings.userEndpoint+`/${userToken}/bank-accounts`,{
         json: true
     }).subscribe(userPaymentMethodsResponse => {
