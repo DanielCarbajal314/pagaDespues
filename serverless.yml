@@ -1,0 +1,51 @@
+# Welcome to serverless. Read the docs
+# https://serverless.com/framework/docs/
+
+# Serverless.yml is the configuration the CLI
+# uses to deploy your code to your provider of choice
+
+# The `service` block is the name of the service
+service: paga-despues
+
+# The `provider` block defines where your service will be deployed
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+# The `functions` block defines what code to deploy
+functions:
+  listUsers:
+    handler: handler.listUsers
+    events:
+      - http:
+          path: listUsers
+          method: get
+          cors: true
+  createUser:
+    handler: handler.createUser
+    events:
+      - http:
+          path: createUser
+          method: post
+          cors: true        
+  listPaymentMethods:
+    handler: handler.listPaymentMethods
+    events:
+      - http:
+          path: listPaymentMethods
+          method: get
+          cors: true 
+  createPayment:
+    handler: handler.createPayment
+    events:
+      - http:
+          path: createPayment
+          method: post
+          cors: true         
+  createPaymentMethod:
+    handler: handler.createPaymentMethod
+    events:
+      - http:
+          path: createPaymentMethod
+          method: post
+          cors: true

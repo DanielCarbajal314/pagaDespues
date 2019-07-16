@@ -1,0 +1,28 @@
+{
+  "name": "pagadespues",
+  "version": "1.0.0",
+  "description": "Prueba tecnica",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielCarbajal314/pagaDespues.git"
+  },
+  "keywords": [
+    "Serverless",
+    "DynamoDb"
+  ],
+  "author": "Daniel Carbajal Lopez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielCarbajal314/pagaDespues/issues"
+  },
+  "homepage": "https://github.com/DanielCarbajal314/pagaDespues#readme",
+  "dependencies": {
+    "@akanass/rx-http-request": "^3.3.0",
+    "rxjs": "^6.5.2",
+    "uuid": "^3.3.2"
+  }
+}
